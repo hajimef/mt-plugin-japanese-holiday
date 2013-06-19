@@ -1,0 +1,14 @@
+name: JapaneseHoliday
+id: JapaneseHoliday
+author_name: <__trans phrase="Hajime Fujimoto">
+author_link: http://www.h-fj.com/blog/
+description: <__trans phrase="Check japanese holidays.">
+plugin_link: http://www.h-fj.com/blog/mtplgdoc/japaneseholiday.php
+doc_link: http://www.h-fj.com/blog/mtplgdoc/japaneseholiday.php
+version: 1.00
+l10n_class: JapaneseHoliday::L10N
+tags:
+  block:
+    DateIfJapaneseHoliday: $JapaneseHoliday::JapaneseHoliday::Plugin::japanese_holiday
+  function:
+    DateJapaneseHolidayName: $JapaneseHoliday::JapaneseHoliday::Plugin::japanese_holiday
