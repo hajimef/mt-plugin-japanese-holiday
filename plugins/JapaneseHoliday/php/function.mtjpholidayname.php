@@ -1,8 +1,11 @@
 <?php
 require_once('public_holiday.php');
 
-function smarty_function_mtdatejapaneseholidayname($args, &$ctx) {
-    if (isset($args['ts'])) {
+function smarty_function_mtjpholidayname($args, &$ctx) {
+    if ($ctx->stash('jpholiday_default_tag')) {
+        $ts = $ctx->tag($ctx->stash('jpholiday_default_tag'), array('format' => '%Y%m%d%H%M%S'));
+    }
+    elseif (isset($args['ts'])) {
         $ts = $args['ts'];
     }
     elseif (isset($args['tag'])) {

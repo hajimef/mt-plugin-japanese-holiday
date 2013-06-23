@@ -7,6 +7,7 @@ use vars qw( %Lexicon );
 %Lexicon = (
     'Hajime Fujimoto' => '藤本　壱',
     'Check japanese holidays.' => '日本の祝日を判定します。',
+    'Please specify tag modifier.' => 'tagモディファイアを指定してください。',
 );
 
 1;

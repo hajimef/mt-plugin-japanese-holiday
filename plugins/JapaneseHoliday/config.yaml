@@ -9,6 +9,7 @@ version: 1.00
 l10n_class: JapaneseHoliday::L10N
 tags:
   block:
-    DateIfJapaneseHoliday: $JapaneseHoliday::JapaneseHoliday::Plugin::japanese_holiday
+    IfJPHoliday: $JapaneseHoliday::JapaneseHoliday::Plugin::japanese_holiday
+    JPHolidayDefaultTag: $JapaneseHoliday::JapaneseHoliday::Plugin::default_tag
   function:
-    DateJapaneseHolidayName: $JapaneseHoliday::JapaneseHoliday::Plugin::japanese_holiday
+    JPHolidayName: $JapaneseHoliday::JapaneseHoliday::Plugin::japanese_holiday
