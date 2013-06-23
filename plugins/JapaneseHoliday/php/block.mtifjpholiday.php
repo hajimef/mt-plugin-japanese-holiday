@@ -3,14 +3,14 @@ require_once('public_holiday.php');
 
 function smarty_block_mtifjpholiday($args, $content, &$ctx, &$repeat) {
     if (!isset($content)) {
-        if ($ctx->stash('jpholiday_default_tag')) {
-            $ts = $ctx->tag($ctx->stash('jpholiday_default_tag'), array('format' => '%Y%m%d%H%M%S'));
-        }
-        elseif (isset($args['ts'])) {
+        if (isset($args['ts'])) {
             $ts = $args['ts'];
         }
         elseif (isset($args['tag'])) {
             $ts = $ctx->tag($args['tag'], array('format' => '%Y%m%d%H%M%S'));
+        }
+        elseif ($ctx->stash('jpholiday_default_tag')) {
+            $ts = $ctx->tag($ctx->stash('jpholiday_default_tag'), array('format' => '%Y%m%d%H%M%S'));
         }
         else {
             $ts = $ctx->tag('Date', array('format' => '%Y%m%d%H%M%S'));

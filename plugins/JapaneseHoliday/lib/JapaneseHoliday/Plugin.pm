@@ -8,9 +8,9 @@ sub japanese_holiday {
 
     my $tag = lc $ctx->stash('tag');
     my $default_tag = $ctx->stash('jpholiday_default_tag');
-    my $ts = $default_tag ? $ctx->tag($default_tag, { format => '%Y%m%d%H%M%S' }) :
-             $args->{ts} ? $args->{ts} :
+    my $ts = $args->{ts} ? $args->{ts} :
              $args->{tag} ? $ctx->tag($args->{tag}, { format => '%Y%m%d%H%M%S' }) :
+             $default_tag ? $ctx->tag($default_tag, { format => '%Y%m%d%H%M%S' }) :
              $ctx->tag('date', { format => '%Y%m%d%H%M%S' });
     my ($year, $month, $day) = unpack('A4A2A2', $ts);
     $year += 0;
